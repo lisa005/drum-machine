@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg)
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    --bg: #1e232e;
+    --white: #cac7d8;
+    --bright: #e09d20;
+    --accent: #a31849; 
+    --blue: #2ccece;
+    --dark: #0c0e13;
+    --click: #fcf4b0;
+
+    --ff-h1: 'Audiowide', cursive;
+    --ff-h2: 'Orbitron', sans-serif;
+    --ff-h3: 'Press Start 2P', cursive;
+
+    --fs-h1: 4.3rem;
+    --fs-h2: 3.2rem;
+    --fs-h3: 2rem;
+
+    --fw-h1: 600;
+    --fw-h2: 400;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#drum-machine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.drum-pad__container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.drum-pad {
+    padding: 1rem;
+    background-color: var(--white);
+    width: 5rem;
+    height: 5rem;
+    font-family: var(--ff-h2);
+    font-weight: var(--fw-h1);
+    font-size: var(--fs-h2);
+    border-radius: 5px;
+    margin: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+    user-select: none;
+    box-shadow: 5px 4px 4px #000000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.drum-pad:hover {
+    cursor: pointer;
+}
+
+.drum-pad:active {
+    background-color: var(--click);
+    box-shadow: 0 0 3px 3px var(--bright);
+}
+
+header h1 {
+    font-family: var(--ff-h1);
+    font-size: var(--fs-h1);
+    text-align: center;
+    color: var(--bright);
+    margin: 0;
+}
+
+#display h2{
+    font-family: var(--ff-h2);
+    font-size: var(--fs-h2);
+    text-align: center;
+    color: var(--blue)
+}
+
+#display h3{
+    font-family: var(--ff-h3);
+    font-size: var(--fs-h3);
+    text-align: center;
+    color: var(--accent);
+    margin: 0;
+}
+
+.audio-name__container {
+    background-color: #c6cf98;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 400px;
+    border-radius: 4px;
+    box-shadow: inset 3px 3px 3px #000000;
+}
+
+.keypress {
+    box-shadow: 0 0 3px 3px var(--bright);
+    background-color: var(--click);
 }
